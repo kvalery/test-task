@@ -1,0 +1,60 @@
+// выравнивание по центру
+@mixin flex_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+// обертка страницы
+.login-page{
+  @include flex_row;
+  height: 100%;
+}
+
+// карточка авторизации
+.login-card {
+  min-width: 300px;
+
+  //ошибка
+  &__error{
+    position: absolute;
+    top: 15px;
+  }
+
+  // хедер карточка авторизации
+  &__title{
+    height: 30px;
+  }
+
+  // основная часть, форма
+  &__content{
+    @include flex_row;
+    padding: 10px 0 0;
+    justify-content: start;
+    align-items: start;
+  }
+
+  // контролл формы
+  &__control{
+    width: 100%;
+  }
+
+  // футор карточки авторизации
+  &__footer{}
+
+  // обертка кнопок отправки формы
+  &__button-wrap {
+    @include flex_row;
+    padding: 20px;
+    justify-content: start;
+    align-items: start;
+  }
+
+  // прогресс бар, индикация отправки
+  &__progress-bar{
+    position: absolute;
+    bottom: 0px;
+  }
+
+}
